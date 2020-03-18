@@ -12,13 +12,13 @@ mvn archetype:generate -DarchetypeGroupId=org.jetbrains.kotlin -DarchetypeArtifa
 
 - diverse and increasing set of business rules
 - a commonality in all rules is a _**condition**_ and a consequent _**action**_
-  -  an _**action may imply/trigger another _**condition**_; leading to a chain of business rules
-- A possible solution would be a switch construct.
+  -  a _**condition**_ may imply/trigger another _**condition**_, leading to a chain of business rules
+- A possible implementation solution would be a switch construct.
   - but that would require a loop to iterate a linked sequence of rules.
-  - besides that the switch - case construct grows in proportion to number of rules.
-- A cleaner solution would be to apply the ** Chain of Responsibility ** pattern:
-  - This enables decoupling the sender/trigger ( _**condition**_) from the receiver (action)
-  - It also enables composition of chained dependent components ( _**conditions**_ and _**actions**_)
-    - Each rule in the composition only needs to know its immediate dependant.
-    - The last rule in the chain accepts a **terminal rule** that ends control flow in a rule pipeline.  
-  - A complex set of business rules can be simply expressed as a process pipeline of linked _**rule nodes**_.
+  - besides that, a switch - case construct grows in proportion to the number of rules.
+- A cleaner implementation solution would be to apply the **Chain of Responsibility** pattern:
+  - This enables decoupling the rule trigger ( _**condition**_) from the execution logic (_**action**_)
+  - It also enables easy composition of chained rules ( _**conditions**_ and _**actions**_)
+    - Each rule in the composition only needs to know about its immediate dependant.
+    - The last rule in the chain accepts a **terminal rule** that ends control flow in the rule pipeline.  
+  - A complex set of business rules can simply be expressed as a pipeline of linked _**rule nodes**_.
