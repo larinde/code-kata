@@ -9,7 +9,7 @@ enum class Result {
 
 class Transaction(val amount: BigDecimal, val date: LocalDateTime, val accountNumber: String, val kycVerified: Boolean)
 
-interface Rule<C, R> {
+interface Rule<in C, out R> {
     fun execute(): R
 }
 

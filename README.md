@@ -21,4 +21,4 @@ mvn archetype:generate -DarchetypeGroupId=org.jetbrains.kotlin -DarchetypeArtifa
   - It also enables easy composition of chained rules ( _**conditions**_ and _**actions**_)
     - Each rule in the composition only needs to know about its immediate dependant.
     - The last rule in the chain accepts a **terminal rule** that ends control flow in the rule pipeline.  
-  - A complex set of business rules can simply be expressed as a pipeline of linked _**rule nodes**_.
+  - A complex set of business rules can be simply expressed as a pipeline of linked _**rule nodes**_.
